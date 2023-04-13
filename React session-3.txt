@@ -1,0 +1,43 @@
+React session-3
+===============
+npm: 
+webpack 
+babel:
+====================
+To devlop react js application required software are
+1. browser   ---> chrome, mozillfirefox,ie...etc
+2. editor  : vs code 
+3. node js
+4.npm 
+5. install react in our pc   --> npm 
+=======================================
+Steps To Create React JS Applications
+=======================================
+Step1: Install React
+=============
+We can install React using npm package manager by using the following command. 
+The create-react-app npm package manager will manage 
+everything, which needed for React project.
+
+npm install -g create-react-app  
+
+Step2: Create a new React project
+=====================
+Once the React installation is successful, 
+we can create a new React project using create-react-app command. 
+create-react-app reactproject  
+ex:
+create-react-app <project_name>
+
+NOTE: We can combine the above two steps in a single command using npx. 
+The npx is a package runner tool which comes with npm 5.2 and above version.
+npx create-react-app reactproject  
+=========================================
+note: by default every react appn provide 3 build in packges
+
+1. react     ---> components  
+2. react-dom  -->   manipulate data on web page
+3. react script -->   
+4. cra-template--> css purpose
+====================================================
+

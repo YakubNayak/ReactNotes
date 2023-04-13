@@ -1,0 +1,131 @@
+In React Js Components are Create in ways
+--------------------------------------------------
+1  Function Based Component
+2. class Based Componets
+==============================
+Syntax
+----------
+function f()
+{
+Statments
+return 
+}
+==========================
+ES6 ---> Arrow functions
+----------------------------------------
+const Login=()=>{
+return 
+}
+----------------------------------------------
+Student.js  (class Based component)
+--------------------------------------------
+import React,{Component} from "react";
+class Student extends Component{
+        render(){
+            return <h2>This is a function based Component</h2>
+        }
+    }
+export default Student;
+
+
+=================================
+Login.js (function based component)
+-------------------------------------------------------
+import React from "react";
+
+const Login=()=>{
+
+    return (<>
+    <form>
+        User Name:<input type="text" name="uname"></input>
+        Password:<input type="password" name="psw"></input>
+        <input type="submit" value="Login"></input>
+    </form>
+    </>)
+}
+export default Login;
+========================
+App.js
+-------------------------------
+import React, { Component } from "react";
+import Student from "./Student";
+import Login from "./Login";
+class App extends Component{
+    render()
+    {
+        return(
+        <>
+            <h1>Home Page</h1> 
+            <div><Student /></div>
+            <div><Login /></div>
+        </>
+        
+        );
+    }
+}
+export default App;
+-------------------------------------------------
+index.js
+------------------------
+import ReactDom from "react-dom"
+import  App from "./App";
+ReactDom.render(<App />, document.getElementById("root");
+-------------------------------------------------------------------------------------
+import React from "react";
+
+const Student=()=>{
+return <h2>This is a function based Component</h2>
+}
+
+
+
+export default Student;
+===============================
+Componets
+---------------------
+Components are the building blocks of any React app.
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+Components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+Always start component names with a capital letter.
+React treats components starting with lowercase letters as DOM tags. For example, <div /> represents an HTML div tag, but <App /> represents a component requires App to be in scope.
+----------------------------------------------------
+Function Based componets
+-------------------------------------
+
+It is a JavaScript function which accepts a single 
+“props” object argument with data and returns a React Element.
+Syntax:- 
+function func_name ( ) {
+   return React Element;
+}
+Ex:- 
+function Student( ){
+   return <h1>Hello Rahul</h1>     
+}
+===============================
+class Based componets
+--------------------------------
+A class component requires you to extend from React.Component. The class must implement a render() member function which returns a React component to be rendered, similar to a return value of a functional component. In a class-based component, props are accessible via this.props. 
+Syntax:- 
+class class_name extends Component {
+   render( ){
+         return React Element
+    }
+}
+Ex:- 
+class Student extends Component {
+   render( ){
+         return <h1>Hello Rahul</h1>
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

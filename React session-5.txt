@@ -1,0 +1,97 @@
+create simple react application
+--------------------------------------
+src
+-----
+App.js    : it is used to create main component
+index.js  : this file for render all react component to index.html
+
+by using root  
+
+<div id="root"</div>
+===============================================
+Copmonent:
+------------------
+component is a container , it may be have single elements or group of elements
+----------------------------------------------------------------------------
+React Appn for To create Multiple elements in single componets
+By using <React.fragment> tag
+---------------------------------------------------------------------------
+Required files 
+------------------
+App.js      ---> create components with multiple elements
+index.js    --> for render components into index.html filr
+index.html   --> out put file
+===========================================
+ App.js
+--------------
+import React, { Component } from "react";
+
+class App extends Component{
+    render()
+    {
+        return(
+        <React.Fragment>
+            <h1>Hello Yakub</h1> 
+            <h2>Hello Yakub</h2> 
+            <h3>Hello Yakub</h3> 
+        </React.Fragment>
+        );
+    }
+}
+export default App;
+
+=============================
+App.js
+--------------
+import React, { Component } from "react";
+
+class App extends Component{
+    render()
+    {
+        return(
+        <>
+            <h1>Hello Yakub</h1> 
+            <h2>Hello Yakub</h2> 
+            <h3>Hello Yakub</h3> 
+        </>
+        );
+    }
+}
+export default App;
+
+==========================
+index.js
+=-------------
+import React from "react"
+import ReactDOM from "react-dom";
+import App from "./App"
+
+ReactDOM.render(<App />,document.getElementById("root"));
+
+=========================
+index.html
+----------------
+<div id="root"</div>
+=======================================================
+App.js
+======
+import React, { Component } from "react";
+class App extends Component{
+    render()
+    {
+        return(
+        <>
+            <h1>User Login Page</h1> 
+            <form>
+            User Name:<input type="text" name="uname"></input><p></p>
+            Password:<input type="password" name="psw"></input><p></p>
+            <input type="submit" value="Login"></input>
+            </form>
+        </>
+        );
+    }
+}
+export default App;
+============================================================
+
+

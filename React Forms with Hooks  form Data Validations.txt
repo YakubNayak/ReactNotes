@@ -1,0 +1,115 @@
+React Forms with Hooks  
+--------------------------------------
+1. onChange()
+2. onSubmit()
+
+----------------------------------------------
+1. onChange()
+--------------------
+
+import React, {useState,useEffect} from 'react';
+const App=()=>{
+    const [name,setName]=useState(" ");
+
+   const handler=e=>{
+setName(e.target.value)
+    }
+    
+    return (<React.Fragment>
+
+Name:<input type="text" value={name} name="name" placeholder="Enter Your name" onChange={handler}></input><p></p>
+My Name is:{name}
+    </React.Fragment>)
+}
+export default App;
+
+
++++++++++++++++++++++++++++++++++
+onSubmit()    Handler
+---------------------------
+How To Summit All Data from forms
+----------------------------------------------
+
+import React, {useState,useEffect} from 'react';
+const App=()=>{
+    const [data,setData]=useState({
+        username:'',
+        password:''
+});
+const {username,password}=data;   // destructuring
+
+   const onChange=e=>{
+        setData({...data,[e.target.name]:[e.target.value]})  // Spread Operator
+    }
+
+    const submitHandler = e =>{
+        e.preventDefault();
+        console.log(data)
+        document.write(username+"   "+password)
+    }
+    
+    return (<React.Fragment>
+<form onSubmit={submitHandler}>
+Name:<input type="text" value={username} name="username" placeholder="Enter Your name" onChange={onChange}></input><p></p>
+password:<input type="text" value={password} name="password" placeholder="Enter Your password" onChange={onChange}></input><p></p>
+<input type="submit" value="submit"></input>
+</form><p></p>
+<h1>{username+"   "+password}</h1>
+</React.Fragment>)
+}
+export default App;
+
+++++++++++++++++++++++++++++++++++++++++++++
+import ReactDom from "react-dom";
+import App from "./App";
+
+ReactDom.render(<App />, 
+document.getElementById("root"));
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+
+import React,{useState} from "react";
+const App =()=>{
+const [name,setName]=useState('')
+
+const myEvent =e =>{
+    setName(e.target.value); 
+}
+    return (<div>
+
+    <form>
+        Name:<input type="text" name="t1" value={name} 
+	onChange={myEvent}></input>
+    </form>
+    <h1>My Name Is:{name}</h1>
+    </div>);
+}
+export default App;
+
+================================
+index.js
+------------
+import ReactDom from "react-dom";
+import App from "./App";
+
+ReactDom.render(<App />,document.getElementById("root"));
+
+==================================
+index.html
+----------------
+<div id="root"></div>
+
+===============================
++++++++++++++++++++++++++++++++++++++++++++++++++==
+
+spread operator
+-----------------------------
+
+
+The operator symbol (...)
+
+def:
+------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++

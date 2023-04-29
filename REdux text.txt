@@ -1,0 +1,85 @@
+Redux In React
+--------------------
+It is all about Managing state in multiple components at a time 
+using react redux.
+
+
+
+
+
+
+Redux is a predictable state container for JavaScript apps. 
+As the application grows, it becomes difficult to keep it 
+organized and maintain data flow. 
+
+Redux solves this problem by managing application’s 
+state with a single global object called Store.
+
+
+
+Principles of Redux
+--------------------------
+3 important principles as given below −
+
+Single Storage
+------------------------------
+The state of your whole application is stored in an object tree within a single store. 
+As whole application state is stored in a single tree, 
+it makes debugging easy, and development faster.
+
+State is Read-only
+--------------------------
+The only way to change the state is to emit an action, 
+an object describing what happened. 
+This means nobody can directly change the state of your application.
+
+Changes are made with pure functions
+---------------------------------------------------
+A reducer is a central place where state modification takes place. 
+Reducer is a function which takes state and action as arguments, 
+and returns a newly updated state.
+
+
+--------------------------------------------------------------
+Redux - Core Concepts
+------------------------------
+
+The components of Redux architecture are explained below.
+
+STORE: A Store is a place where the entire state of your application lists. 
+It manages the status of the application and has a dispatch(action) function. 
+It is like a brain responsible for all moving parts in Redux.
+
+ACTION: Action is sent or dispatched from the view which are payloads that can 
+be read by Reducers. It is a pure object created to store the 
+information of the user's event. It includes information such as type 
+of action, time of occurrence, location of occurrence, its coordinates, 
+and which state it aims to change.
+
+
+REDUCER: Reducer read the payloads from the actions and 
+then updates the store via the state accordingly. 
+It is a pure function to return a new state from the initial state.
+
+----------------------------------------------------------------------------------------
+
+
+
+to work with redux Required Dependencies are
+----------------------------------------------------------
+1. npm install redux
+2. npm install react-redux
+3. npm install redux-thunk  
+4. npm install redux-saga
+-----------------------------------
+
+Web application / Mobile application also
+-----------------------------------------------------------------------
+store.js
+reducer.js
+App.js
+index.js
+------------------------------------------
+
+
+

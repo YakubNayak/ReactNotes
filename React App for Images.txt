@@ -1,0 +1,67 @@
+Create a React Application to add Images with class componet?
+-------------------------------------------------------------------------------
+Required Files are
+-----------------------------
+1 .index.html
+2. 1.jpg       (image file)
+3. App.js
+4. index.js
+
+---------------------------------------------------
+
+case1: add image directly  with in the index.html code
+
+index.html
+-------------------------
+
+<div id="root"></div>
+    <center>
+    <div>
+      <img src="%PUBLIC_URL%/13.JPG" width="200" height="200">
+      <img src="%PUBLIC_URL%/2.JPG" width="200" height="200">
+      <img src="%PUBLIC_URL%/images/7.JPG" width="200" height="200">
+    </div>
+  </center>
+
+--------------------------------------------------
+
+case2: add image with component with help of App.js file
+---------------------------------------------------------------------
+
+App.js
+---------------
+import React, { Component } from 'react';
+export default class App extends Component{
+render(){
+
+return(<div>
+
+      <img src={process.env.PUBLIC_URL+"/2.jpg"} width="200" height="200"/>
+      <img src={process.env.PUBLIC_URL+"/13.jpg"} width="200" height="200"/>
+      <img src={process.env.PUBLIC_URL+"/images/7.jpg"} width="200" height="200"/>
+     
+</div>);
+}
+}
+
+=========================================
+index.js
+----------------
+
+import ReactDom from 'react-dom';
+
+import App from './App';
+
+ReactDom.render(<App />, document.getElementById("root"));
+
+
+
+
+
+
+
+
+
+}
+
+

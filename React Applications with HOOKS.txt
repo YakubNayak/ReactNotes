@@ -1,0 +1,289 @@
+React Applications with HOOKS
+--------------------------------------------
+1. Print Full Name:
+----------------------------
+import React, { useState } from 'react';
+
+const First = () => {
+    const [data,setData]=useState({
+        FirstName:'',
+        LastName:''
+    })
+    const [FullName, setFullName] = useState('')
+    const {FirstName,LastName}=data;
+    const Change=(e)=>{
+        setData({...data,[e.target.name]:e.target.value})
+    }
+   
+    const displayName=(e)=>{
+        e.preventDefault();
+        setFullName("Welcome To   "+FirstName + " " + LastName)
+    }
+    return (
+        <>
+        <div>
+            
+            <form onSubmit={displayName}>
+              Enter First Name :  <input type="text" name='FirstName' 
+              value={FirstName} onChange={Change} placeholder="Enter FirstName"/><br></br><br></br>
+              Enter Last Name :  <input type="text"  name='LastName' 
+              value={LastName} onChange={Change} placeholder="Enter LastName"/><br></br><br></br>
+               <input type="submit" value="submit"/>
+            </form>
+        </div>
+        <div>
+           <h1> {FullName}</h1>
+        </div>
+        </>
+    );
+};
+
+export default First;
+
+
+===================================================
+2. Check Even or Odd?
+-------------------------------
+import React, { useState } from 'react';
+
+const EvenOdd = () => {
+    const [data,setData]=useState({
+        number:''
+    });
+
+    const [Number,setNumber]=useState();
+    const {number}=data;
+    const change = (e) =>{
+        setData({...data,[e.target.name]:e.target.value});
+    }
+
+const submit = (e) =>{
+      e.preventDefault();
+      if(number%2==0){
+          setNumber(number+" is Even Number");
+      }
+      else
+{
+        setNumber(number+" is Odd Number");
+      }
+}
+
+    return (
+        <>
+        <div>
+            <center>
+                <h3>Check The Given Number is Even Or Odd</h3>
+               
+ <form onSubmit={submit}>
+
+                    <b>Enter a Value :</b>
+
+                    <input type="text" name='number' value={number} 
+	onChange={change}
+                    placeholder="Enter Number"/><p/><p/>
+                    <input type="submit" value="Check Even Or Odd" />
+                </form>
+            </center>
+            
+        </div><p/><p/>
+        <div>
+            <center>
+                <h3>
+                    {Number}
+                </h3>
+            </center>
+        </div>
+        </>
+    );
+};
+
+export default EvenOdd;
+==================================================
+3. Check The Given Number is +ve or -ve?
+----------------------------------------------------
+import React, { useState } from 'react';
+
+const EvenOdd = () => {
+    const [data,setData]=useState({
+        number:''
+    });
+    const [Number,setNumber]=useState();
+    const {number}=data;
+    const change = (e) =>{
+        setData({...data,[e.target.name]:e.target.value});
+    }
+const submit = (e) =>{
+      e.preventDefault();
+      if(number>0){
+          setNumber(number+" is Possitive Number");
+      }
+      else if(number<0){
+        setNumber(number+" is Negetive Number");
+      }
+      else{
+        setNumber( "Number is Zero");
+      }
+}
+
+    return (
+        <>
+        <div>
+            <center>
+                <u><h3>Check The Given Number is Even Or Odd</h3></u><p/><p/>
+                <form onSubmit={submit}>
+                    <b>Enter a Value :</b>
+                    <input type="text" name='number' value={number} onChange={change}
+                    placeholder="Enter Number"/><p/><p/>
+                    <input type="submit" value="Check Even Or Odd" />
+                </form>
+            </center>
+            
+        </div><p/><p/>
+        <div>
+            <center>
+                <h3>
+                    {Number}
+                </h3>
+            </center>
+        </div>
+        </>
+    );
+};
+
+export default EvenOdd;
+
+===============================================
+4. Print Student Record
+---------------------------------
+import React, { useState } from 'react';
+
+const StudentResult = () => {
+    const [data,setData]=useState({
+        studentno:'',
+        studentname:'',
+        marks1:'',
+        marks2:'',
+        marks3:'',
+        total:''
+    })
+    
+    const {studentno,studentname,marks1,marks2,marks3}=data;
+    const [total,setTotal]=useState();
+    const [result,setResult]=useState();
+    const change = (e) =>{
+        setData({...data,[e.target.name]:e.target.value})
+    }
+    const submit = (e) =>{
+        e.preventDefault();
+        setTotal(parseInt(marks1)+parseInt(marks2)+parseInt(marks3));
+        if(total>=250 && total<=300){
+            setResult("First Class");
+        }
+        else if(total>=200 && total<250){
+            setResult("Second Class");
+        }
+        else if(total>=150 && total<200){
+            setResult("Third Class");
+        }
+        else if( total<150){
+            setResult("Failed");
+        }
+        else{
+        console.log(data);
+        }
+    }
+    return (
+        <div>
+            <center>
+                <form onSubmit={submit}>
+                    <h1><u>Student Result</u></h1><p />
+                    <b>Enter Student Number : </b>
+                    <input type="text" name='studentno' value={studentno} onChange={change}/><p />
+                    <b>Enter Student Name : </b>
+                    <input type="text" name='studentname' value={studentname} onChange={change}/><p />
+                    <b>Enter Student Marks 1 : </b>
+                    <input type="text" name='marks1' value={marks1} onChange={change}/><p />
+                    <b>Enter Student Marks 2 : </b>
+                    <input type="text" name='marks2' value={marks2} onChange={change}/><p />
+                    <b>Enter Student Marks 3 : </b>
+                    <input type="text" name='marks3' value={marks3} onChange={change}/><p />
+                    <input type="submit" value="Calculate Total Marks" /><p />
+                    <b> Student Total Marks : </b>
+                    <input type="text" name='total' value={total} onChange={change}/><p />
+                    <input type="submit" value="Display Result" /><p />
+                    <b> Student Result is : </b>
+                    <input type="text" name='result' value={result} onChange={change}/><p />
+                </form>
+            </center>
+            
+        </div>
+    );
+};
+
+export default StudentResult;
+
+=====================================================================
+5. Employee Salary Information Application?
+------------------------------------------------------
+import React, { useState } from 'react';
+
+const Salary = () => {
+    const [data,setData]=useState({
+        empno:'',
+        empname:'',
+        empsal:''
+    })
+const [da,setDa]=useState();
+const [hra,setHra]=useState();
+const [total,setTotal]=useState();
+
+let Da
+let Hra
+let Total
+
+    const {empno,empname,empsal}=data;
+
+    const change = (e) =>{
+        setData({...data,[e.target.name]:e.target.value})
+    }
+    const submit = (e) =>{
+        e.preventDefault();
+        console.log(data);
+        Da=0.2*parseInt(empsal);
+        Hra=0.4*parseInt(empsal);
+        Total=parseInt(empsal)+Da+Hra;
+        setDa("DA :"+Da);
+        setHra("HRA :"+Hra);
+        setTotal("Total Salary :"+Total)
+
+    }
+    return (
+    <>
+        <div><center>
+            <h1>Employe  Salary Information</h1><p /><p />
+            <form onSubmit={submit}>
+                <b>Enter Employe No:</b>
+                <input type="text" name='empno' value={empno} onChange={change}/><p />
+                <b>Enter Employe Name:</b>
+                <input type="text" name='empname' value={empname} onChange={change}/><p />
+                <b>Enter Basic Salary:</b>
+                <input type="text" name='empsal' value={empsal} onChange={change}/><p />
+                <input type="submit" value="CALCULATE" />
+            </form>
+            </center>
+        </div>
+        <center>
+            <div>
+                <h3>
+                {da}<p />
+                {hra}<p />
+                {total}
+                </h3>
+            </div>
+        </center>
+        </>
+    );
+};
+
+export default Salary;
+===================================================

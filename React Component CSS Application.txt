@@ -1,0 +1,50 @@
+React Component CSS Application
+------------------------------------------------
+Required Files are
+----------------------------
+1. App.js
+2. index.js
+3. index.html
+---------------------------
+App.js
+-----------
+
+import React, { Component } from 'react'
+class App extends Component{
+    render(){
+
+const p1Style={
+    color:"red",
+    backgroundColor:"yellow"
+}
+const p2Style={
+    fontSize:"20px"
+}
+
+        return(<div>
+            <h1 style={{"color":"green"}}>Welcome to React Application</h1>
+           <h3 style={{"color":"blue"}}>What is React?</h3>
+
+  <p style={{...p1Style,...p2Style}}>React is a flexible and efficient open source front-end JavaScript library.</p>
+       
+ <p style={{...p1Style,...{fontSize:"80px"}}}>React is a flexible and efficient open source front-end JavaScript library.</p>
+      
+           
+        </div>)
+    }
+}
+export default App;
+
+=================================================
+index.js
+-----------------
+import ReactDom from "react-dom";
+import App from "./App";
+
+ReactDom.render(<App />,document.getElementById("root"));
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+index.html
+----------------------
+ <div id="root"></div>
+
+

@@ -1,0 +1,68 @@
+React Application for External Style Sheet
+--------------------------------------------------------
+Required Files are
+--------------------------
+1.App.css
+2.User.js
+3.App.js
+4.index.js
+5. index.html
+-----------------------------------------------
+App.css
+-------------
+.txta{
+    color: green;
+    
+}
+.txtb{
+    letter-spacing: 6px;
+    line-height: normal;
+    text-decoration:double;
+    text-transform: uppercase;
+    background-color: aqua;
+}
++++++++++++++++++++++++++++++++++++++++++++
+User.js
+------------
+import React, {Component} from 'react';
+import './App.css';
+export default class User extends Component{
+    render()
+    {
+
+        return(<div>
+            <h1 className='txtb'>Welcome To User Component</h1>
+            
+        </div>);
+    }
+}
+-----------------------------------------------------------------------------------
+App.js
+-------------
+import React, { Component } from 'react';
+import './App.css';
+import User from './User';
+class App extends Component{
+render()
+{
+    return(<div>
+        <h1 className='txta'>Welcome To React CSS External Style Sheet</h1>
+        <User />
+    </div>)
+}
+}
+export default App;
+
+===============================================
+index.js
+------------------
+import ReactDom from "react-dom";
+import App from "./App";
+
+ReactDom.render(<App />,document.getElementById("root"));
+
+=====================================================
+index.html
+-----------------
+ <div id="root"></div>
++++++++++++++++++++++++++++++++++++++++++++++++

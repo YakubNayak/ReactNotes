@@ -1,0 +1,43 @@
+useEffect() hook  application
+--------------------------------------
+App.js
+---------------
+
+import React, {useState,useEffect} from 'react';
+const App=()=>{
+    const [count,setCount]=useState(0);
+    const [count1,setCount1]=useState(50);
+    const myEvent=()=>{
+        setCount(count+1)
+    };
+    const myEvent2=()=>{
+        setCount1(count1-1);
+    }
+    useEffect(()=>{
+        console.log("Effect is commited");
+    },[count1]);
+    
+    return (<React.Fragment>
+
+<h1> Count Up:{count}</h1>
+<button onClick={myEvent}>Count</button>
+<h1> Down Count:{count1}</h1>
+<button onClick={myEvent2}>Down</button>
+    </React.Fragment>)
+}
+export default App;
+
++++++++++++++++++++++++++++++++++
+index.js
+-------------------
+import ReactDom from "react-dom";
+import App from "./App";
+
+ReactDom.render(<App />, 
+document.getElementById("root"));
+
++++++++++++++++++++++++++++++++
+index.html
+---------------------
+ <div id="root"></div>
+++++++++++++++++++++++++++++++++++++

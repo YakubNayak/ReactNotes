@@ -1,0 +1,22 @@
+External Style Sheet
+
+The CSS styles are defined in a separate ".css" file and export 
+.css file  and import into another component file.
+--> we can link (connect) .css file to component file.
+--> Advantage:
+
+it supports re usabiltiy . that means
+the css file can create only once reuse same styles to 
+multiple web components.
+
+
+ex:
+-----
+in generally in react CSS code write in APP.CSS file .
+
+--> export App.css file and import into App.js
+in our coponent file.
+---------------------------------------------------------------
+
+ 
+
